@@ -8,5 +8,5 @@ Description: This package proposes some R codes to compute the kernel density es
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Depends: rgdal, surveillance, maptools, ggplot2, ellipse, fields, gpclib, ks, maps, rgeos, parallel, sp, ggmap, reshape2, grDevices, methods
+Depends: rgdal, surveillance, maptools, ggplot2, ellipse, fields, ks, maps, rgeos, parallel, sp, ggmap, reshape2, grDevices, methods
 RoxygenNote: 6.0.1

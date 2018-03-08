@@ -56,8 +56,8 @@ p_acci_fin <- plot_sKDE(smooth = smoothed_fin,
     coord = acci$finistere$points,
     alpha_coords = .8,
     size_coords = 1,
-    breaks = seq(min(smoothed_fin$ZNA, smoothed_fin_nc$ZNA,na.rm=T)*.95,
-    max(smoothed_fin$ZNA, smoothed_fin_nc$ZNA,na.rm=T)*1.05, length=21),
+    breaks = seq(min(smoothed_fin$ZNA, smoothed_fin_nc$ZNA,na.rm=TRUE)*.95,
+    max(smoothed_fin$ZNA, smoothed_fin_nc$ZNA,na.rm=TRUE)*1.05, length=21),
     polygon = acci$finistere$polygon, round = 3, colContour = "black") +
 ggtitle("With correction") +
 coord_equal()

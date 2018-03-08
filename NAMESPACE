@@ -1,2 +1,2 @@
 exportPattern("^[[:alpha:]]+")
-import(rgdal, surveillance, maptools, ggplot2, ellipse, fields, gpclib, ks, maps, rgeos, parallel, sp, ggmap, reshape2, grDevices, methods)
+import(rgdal, surveillance, maptools, ggplot2, ellipse, fields, ks, maps, rgeos, parallel, sp, ggmap, reshape2, grDevices, methods)

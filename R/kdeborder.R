@@ -86,7 +86,7 @@ sKDE <- function(U, polygon, optimal = TRUE, h = .1, parallel = FALSE, n_cluster
   if(parallel){
     ncl <- detectCores()-1
     cl <- makeCluster(ncl)
-    clusterEvalQ(cl, library("gpclib"))
+    clusterEvalQ(cl, library("rgeos"))
     clusterEvalQ(cl, library("sp"))
     clusterExport(cl, c("sCircle", "sWeights"))
     OMEGA <- pblapply(1:n, poidsU, U = U, h = sqrt(H[1, 1]), POL = polygon, cl = cl)
@@ -208,8 +208,8 @@ sKDE_without_c = function(U, polygon, optimal = TRUE, h = .1){
 #'     coord = acci$finistere$points,
 #'     alpha_coords = .8,
 #'     size_coords = 1,
-#'     breaks = seq(min(smoothed_fin$ZNA, smoothed_fin_nc$ZNA,na.rm=T)*.95,
-#'     max(smoothed_fin$ZNA, smoothed_fin_nc$ZNA,na.rm=T)*1.05, length=21),
+#'     breaks = seq(min(smoothed_fin$ZNA, smoothed_fin_nc$ZNA,na.rm=TRUE)*.95,
+#'     max(smoothed_fin$ZNA, smoothed_fin_nc$ZNA,na.rm=TRUE)*1.05, length=21),
 #'     polygon = acci$finistere$polygon, round = 3, colContour = "black") +
 #' ggtitle("With correction") +
 #' coord_equal()
