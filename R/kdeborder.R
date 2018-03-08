@@ -53,7 +53,7 @@ sWeights <- function(x, h, polygon) {
 #' @param optimal if TRUE, uses Hpi() to select the optimal bandwidth.
 #' @param h only if optimal=FALSE, scalar bandwidth.
 #' @param parallel if TRUE, computes the weights using clusters.
-#' @param n_clusters only if n_clusters=TRUE, defines the number of clusters.
+#' @param n_clusters only if n_clusters=TRUE, defines the number of clusters. (Set to NULL for automatic detection (on Unix)).
 #' @references Charpentier, A. & Gallic, E. (2015). Kernel density estimation based on Ripley’s correction. GeoInformatica, 1-22.
 #' (\href{https://link.springer.com/article/10.1007/s10707-015-0232-z}{Springer})
 #' @examples
@@ -84,8 +84,8 @@ sKDE <- function(U, polygon, optimal = TRUE, h = .1, parallel = FALSE, n_cluster
   # Change the number of slaves according to the number of cores your processor has
   # It is recommended to use a maximum of the number of cores minus one.
   if(parallel){
-    ncl <- detectCores()-1
-    cl <- makeCluster(ncl)
+    if(is.null(n_clusters)) n_clusters <- detectCores()-1
+    cl <- makeCluster(n_clusters)
     clusterEvalQ(cl, library("rgeos"))
     clusterEvalQ(cl, library("sp"))
     clusterExport(cl, c("sCircle", "sWeights"))
