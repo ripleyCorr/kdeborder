@@ -63,7 +63,7 @@ sWeights <- function(x, h, polygon) {
 #' optimal=TRUE, parallel = FALSE)
 sKDE <- function(U, polygon, optimal = TRUE, h = .1, parallel = FALSE, n_clusters = 4){
   if(!class(polygon) == "gpc.poly") polygon <- as(polygon, "gpc.poly")
-  if(class(U) == "data.frame") U <- as.matrix(U)
+  if("data.frame" %in% class(U)) U <- as.matrix(U)
   IND <- which(is.na(U[, 1]) == FALSE)
   U <- U[IND,]
   n <- nrow(U)
