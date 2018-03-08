@@ -12,3 +12,12 @@ To install the package in R, from Github:
 # install.packages("devtools")
 devtools::install_github("ripleyCorr/kdeborder")
 ```
+
+Some examples are given:
+- On the following repository https://github.com/ripleyCorr/Kernel_density_ripley
+- On http://egallic.fr/R/sKDE/smooth-maps/kde.html with images incorporated.
+
+
+Some explanations are available on our blogs:
+- http://freakonometrics.hypotheses.org/17486
+- http://egallic.fr/kernel-density-estimation-with-ripleys-circumferential-correction/
